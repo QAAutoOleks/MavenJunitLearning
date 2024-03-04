@@ -53,13 +53,20 @@ public class FirstSeleniumTest {
         var expectedItems = new String[]{
                 "First Item", "Second Item", "Third Item", "Fourth Item", "Fifth Item", "123456789"
         };
-//        for (int i = 0; i < infoList.size(); i++) {
-//        }
-//            Assertions.assertEquals(expectedItems[i], infoList.get(i).getText());
+        // for (int i = 0; i < infoList.size(); i++) {
+        // }
+        // Assertions.assertEquals(expectedItems[i], infoList.get(i).getText());
 
-//      WebElements to Array String
+        // WebElements to Array String
         var actualItem = infoList.stream().map(e -> e.getText()).toArray();
         Assertions.assertArrayEquals(expectedItems, actualItem);
+
+        Assertions.assertAll(
+                () -> Assertions.assertTrue(checkboxesList.get(0).isSelected(),
+                        "Checkbox is not selected"),
+                () -> Assertions.assertFalse(checkboxesList.get(1).isSelected(),
+                        "Checkbox is selected")
+        );
     }
 
     @AfterEach
