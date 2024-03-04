@@ -61,6 +61,7 @@ public class FirstSeleniumTest {
         var actualItem = infoList.stream().map(e -> e.getText()).toArray();
         Assertions.assertArrayEquals(expectedItems, actualItem);
 
+        // If one test fails, assertions continuous execution
         Assertions.assertAll(
                 () -> Assertions.assertTrue(checkboxesList.get(0).isSelected(),
                         "Checkbox is not selected"),
