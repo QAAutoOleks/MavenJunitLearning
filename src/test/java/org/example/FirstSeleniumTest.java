@@ -68,6 +68,11 @@ public class FirstSeleniumTest {
                 () -> Assertions.assertFalse(checkboxesList.get(1).isSelected(),
                         "Checkbox is selected")
         );
+
+        double actualDoubleValue = 2.999;
+        double expectedDoubleValue = 3.000;
+
+        Assertions.assertEquals(expectedDoubleValue, actualDoubleValue, 0.001);
     }
 
     @AfterEach
