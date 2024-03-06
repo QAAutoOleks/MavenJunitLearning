@@ -1,8 +1,10 @@
 package org.example;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
@@ -27,5 +29,17 @@ public class ToDoTests {
         webDriverWait = new WebDriverWait(driver,
                 Duration.ofSeconds(WAIT_FOR_ELEMENT_TIMEOUT));
         actions = new Actions(driver);
+    }
+
+    @Test
+    public void verifyToDoListCreatedSuccessfully() {
+        driver.navigate().to("https://todomvc.com");
+    }
+
+    @AfterEach
+    public void tearDown() {
+        if (driver != null) {
+            driver.quit();
+        }
     }
 }
