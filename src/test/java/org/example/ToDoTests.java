@@ -37,7 +37,7 @@ public class ToDoTests {
         var toDoInput = waitAndFindElement(
                 By.xpath("//input[@placeholder='What needs to be done?']"));
         toDoInput.sendKeys(itemText);
-        actions.click(toDoInput).sendKeys(Keys.ENTER).pause(1000).perform();
+        actions.click(toDoInput).sendKeys(Keys.ENTER).perform();
     }
 
     @BeforeAll

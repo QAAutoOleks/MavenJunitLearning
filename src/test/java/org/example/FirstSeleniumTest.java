@@ -36,7 +36,8 @@ public class FirstSeleniumTest {
         checkboxesList.get(0).click();
 
         // By.cssSelector("[class='done-false']")); doesn't work, wrong letters?
-        var infoList = driver.findElements(By.xpath("//li[@ng-repeat]/span"));
+        var infoList = driver.findElements(
+                By.xpath("//li[@ng-repeat]/span"));
 
         Assertions.assertEquals("123456789",
                 infoList.get(infoList.size() - 1).getText());
